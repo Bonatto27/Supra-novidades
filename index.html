@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Empresa</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #fff;
+        }
+        header {
+            background-color: #000000;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        header img { width: 220px; }
+        h2 {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #fff;
+            background-color: #000000;
+            padding: 10px 0;
+        }
+        .section-promocoes {
+            background-color: #000000;
+            padding: 40px 20px;
+        }
+        .promocoes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card-vertical {
+            width: 250px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            text-align: center;
+        }
+        .card-vertical img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-vertical .nome-produto {
+            padding: 12px 10px 4px;
+            color: #000000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .card-vertical .descricao {
+            padding: 4px 12px 8px;
+            color: #555555;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        .preco {
+            font-weight: bold;
+            font-size: 30px;
+            color: #000000;
+            padding: 8px 0 12px;
+            display: block;
+        }
+        .misterioso {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: #000000;
+        }
+
+        /* LAYOUT COM VÍDEOS NOS CANTOS - DESKTOP */
+        .layout-com-videos {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #000000;
+        }
+        .video-lateral {
+            width: 200px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: sticky;
+            top: 20px;
+        }
+        .video-lateral video {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+        .video-lateral p {
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            margin-top: 6px;
+        }
+        .conteudo-central {
+            flex: 1;
+            max-width: 860px;
+        }
+
+        /* VÍDEO FINAL */
+        .secao-video-final {
+            background-color: #000000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .secao-video-final h2 {
+            margin-bottom: 20px;
+        }
+        .video-final {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .video-lateral {
+                display: none; /* esconde vídeos laterais no celular */
+            }
+            .layout-com-videos {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Logo.png" alt="Logo">
+    </header>
+
+    <!-- LAYOUT COM VÍDEOS NOS CANTOS (DESKTOP) -->
+    <div class="layout-com-videos">
+
+        <!-- VÍDEO ESQUERDO -->
+        <div class="video-lateral">
+            <video autoplay muted loop playsinline>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+            <p>Confira nossas promoções!</p>
+        </div>
+
+        <!-- CONTEÚDO CENTRAL -->
+        <div class="conteudo-central">
+
+            <section class="section-promocoes">
+                <h2>🔥 PROMOÇÕES IMPERDÍVEL</h2>
+                <div class="promocoes">
+                    <div class="card-vertical">
+                        <img src="isca.jpg" alt="Isca de Frango">
+                        <p class="nome-produto">Isca De Frango</p>
+                        <p class="descricao">Iscas crocantes de frango.</p>
+                        <span class="preco">R$ 29,90</span>
+                    </div>
+                    <div class="card-vertical">
+                        <img src="beats.png" alt="Beats Verde">
+                        <p class="nome-produto">Beats Verde</p>
+                        <p class="descricao">Bebida refrescante sabor Frutas verdes.</p>
+                        <span class="preco">R$ 9,99</span>
+                    </div>
+                    <div class="card-vertical">
+                        <img src="gin.jpg" alt="Gin Tropical">
+                        <p class="nome-produto">Gin Tropical</p>
+                        <p class="descricao">Gin com Red Bull tropical.</p>
+                        <span class="preco">R$ 32,00</span>
+                    </div>
+                </div>
+            </section>
+
+            <h2>🎲 CARDÁPIO MISTERIOSO</h2>
+            <section class="misterioso">
+                <div class="card-vertical">
+                    <img src="jara.jpg" alt="Jarrão">
+                    <p class="nome-produto">Jarrão Sem Freio Ice</p>
+                    <p class="descricao">Jarrão de 2L para beber com todos os amigos</p>
+                    <span class="preco">R$ 62,00</span>
+                </div>
+                <div class="card-vertical">
+                    <img src="vinho.jpg" alt="Sem Freio Ice">
+                    <p class="nome-produto">Sem Freio Ice</p>
+                    <p class="descricao">2 copos de 500ml</p>
+                    <span class="preco">R$ 31,00</span>
+                </div>
+                <div class="card-vertical">
+                    <img src="caipirinha.jpg" alt="Surpresa">
+                    <p class="nome-produto">???</p>
+                    <p class="descricao">??</p>
+                    <span class="preco">R$ ???</span>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- VÍDEO DIREITO -->
+        <div class="video-lateral">
+            <video autoplay muted loop playsinline>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+            <p>Venha nos visitar!</p>
+        </div>
+
+    </div>
+
+    <!-- VÍDEO FINAL (aparece em PC e celular) -->
+    <section class="secao-video-final">
+        <h2>🎬 Conheça o Supra Club</h2>
+        <video class="video-final" controls playsinline>
+            <source src="video_final.mp4" type="video/mp4">
+        </video>
+    </section>
+
+</body>
+</html>
