@@ -2,7 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Minha Empresa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supra Club</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -73,8 +74,6 @@
             padding: 20px;
             background-color: #000000;
         }
-
-        /* LAYOUT COM VÍDEOS NOS CANTOS - DESKTOP */
         .layout-com-videos {
             display: flex;
             align-items: flex-start;
@@ -106,8 +105,6 @@
             flex: 1;
             max-width: 860px;
         }
-
-        /* VÍDEO FINAL */
         .secao-video-final {
             background-color: #000000;
             padding: 40px 20px;
@@ -124,26 +121,42 @@
             margin: 0 auto;
         }
 
-        /* MOBILE */
+        /* ==================== MOBILE ==================== */
         @media (max-width: 768px) {
+            /* Esconde completamente os vídeos laterais (esquerda e direita) */
             .video-lateral {
-                display: none; /* esconde vídeos laterais no celular */
+                display: none !important;
             }
+
+            /* Mantém o conteúdo central em coluna */
             .layout-com-videos {
                 flex-direction: column;
+                gap: 0;
+            }
+
+            /* Ajustes nos cards para ficarem bonitos no celular */
+            .card-vertical {
+                width: 90vw;
+                max-width: 380px;
+            }
+            .card-vertical img {
+                height: 260px;
+            }
+            .promocoes, 
+            .misterioso {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Logo.png" alt="Logo">
+        <img src="Logo.png" alt="Supra Club">
     </header>
 
-    <!-- LAYOUT COM VÍDEOS NOS CANTOS (DESKTOP) -->
     <div class="layout-com-videos">
-
-        <!-- VÍDEO ESQUERDO -->
+        <!-- Vídeo lateral esquerdo (some no mobile) -->
         <div class="video-lateral">
             <video autoplay muted loop playsinline>
                 <source src="video1.mp4" type="video/mp4">
@@ -151,9 +164,7 @@
             <p>Confira nossas promoções!</p>
         </div>
 
-        <!-- CONTEÚDO CENTRAL -->
         <div class="conteudo-central">
-
             <section class="section-promocoes">
                 <h2>🔥 PROMOÇÕES IMPERDÍVEL</h2>
                 <div class="promocoes">
@@ -199,26 +210,22 @@
                     <span class="preco">R$ ???</span>
                 </div>
             </section>
-
         </div>
 
-        <!-- VÍDEO DIREITO -->
+        <!-- Vídeo lateral direito (some no mobile) -->
         <div class="video-lateral">
             <video autoplay muted loop playsinline>
                 <source src="video2.mp4" type="video/mp4">
             </video>
             <p>Venha nos visitar!</p>
         </div>
-
     </div>
 
-    <!-- VÍDEO FINAL (aparece em PC e celular) -->
     <section class="secao-video-final">
         <h2>🎬 Conheça o Supra Club</h2>
         <video class="video-final" controls playsinline>
             <source src="video_final.mp4" type="video/mp4">
         </video>
     </section>
-
 </body>
 </html>
